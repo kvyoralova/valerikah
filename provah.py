@@ -6,12 +6,13 @@ translator = Translator()
 from transliterate import translit, get_available_language_codes
 
 st.title("Італійський розмовник для дітей - Итальянский разговорник для детей")
-purposeuk = st.write(""" -  UK: Цей додаток має на меті допомогти українським дітям, як російською, так і українською мовою, вивчити та використовувати деякі корисні фрази італійською""") 
+purposeuk = """ -  UK: Цей додаток має на меті допомогти українським дітям, як російською, так і українською мовою, вивчити та використовувати деякі корисні фрази італійською"""
+st.write(purposeuk)
 st.write(""" -  RU: Это приложение нацелено на то, чтобы помочь украинским и русскоязычным детям выучить и использовать некоторые полезные фразы на итальянском языке""")
 purpose = st.checkbox('Click here if you want to know the purpose of this app in another language')
 if purpose:
   lang = st.selectbox("Insert the code of a language in which you want to know the purpose of the app:", ('en', 'de', 'it'))
-  translation = translator.translate('hwllo world', dest=lang)
+  translation = translator.translate(purposeuk, dest=lang)
   purposetext = translation.text
   st.write(purposetext)
 else:
